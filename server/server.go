@@ -4,15 +4,17 @@ import (
 	"log"
 	"net"
 
+	tmclient "tmclient"
+
 	tmservice "github.com/cosmos/cosmos-sdk/client/grpc/tmservice"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )
 
 func NewGRPCServer() *grpc.Server {
-	client := dial("grpc.osmosis.zone:9090")
+	client := tmclient.Dial("grpc.osmosis.zone:9090")
 	gserver := grpc.NewServer()
-	srv := grpcServer{
+	srv := GrpcServer{
 		client: client,
 	}
 

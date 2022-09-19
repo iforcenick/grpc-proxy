@@ -1,10 +1,11 @@
-module github.com/iforcenick/grpc-proxy
+module server
 
 go 1.19
 
 require (
 	github.com/cosmos/cosmos-sdk v0.45.4
 	google.golang.org/grpc v1.45.0
+	tmclient v0.0.0
 )
 
 require (
@@ -104,4 +105,5 @@ replace (
 	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
 	github.com/keybase/go-keychain => github.com/99designs/go-keychain v0.0.0-20191008050251-8e49817e8af4
 	google.golang.org/grpc => google.golang.org/grpc v1.33.2
+	tmclient v0.0.0 => ./../tmclient/
 )
