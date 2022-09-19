@@ -6,6 +6,7 @@ import (
 	tmservice "github.com/cosmos/cosmos-sdk/client/grpc/tmservice"
 )
 
+// Implemented gRPC server structure
 type GrpcServer struct {
 	tmservice.UnimplementedServiceServer
 	client *tmservice.ServiceClient

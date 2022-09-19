@@ -9,6 +9,7 @@ import (
 	tmservice "github.com/cosmos/cosmos-sdk/client/grpc/tmservice"
 )
 
+// Test the equality of two responses from localhost and osmosis public endpoint *GetLatestBlock*
 func TextGetLatestBlock(t *testing.T) {
 	local_client := tmclient.Dial("localhost:8080")
 	local_response, local_err := (*local_client).GetLatestBlock(context.Background(), &tmservice.GetLatestBlockRequest{})
@@ -27,6 +28,7 @@ func TextGetLatestBlock(t *testing.T) {
 	}
 }
 
+// Test the equality of two responses from localhost and osmosis public endpoint *GetBlockByHeight*
 func TestGetBlock(t *testing.T) {
 	local_client := tmclient.Dial("localhost:8080")
 	local_response, local_err := (*local_client).GetBlockByHeight(context.Background(), &tmservice.GetBlockByHeightRequest{Height: 5850706})
@@ -45,6 +47,7 @@ func TestGetBlock(t *testing.T) {
 	}
 }
 
+// Test the equality of two responses from localhost and osmosis public endpoint *GetSyncing*
 func TestGetSyncing(t *testing.T) {
 	local_client := tmclient.Dial("localhost:8080")
 	local_response, local_err := (*local_client).GetSyncing(context.Background(), &tmservice.GetSyncingRequest{})
@@ -63,6 +66,7 @@ func TestGetSyncing(t *testing.T) {
 	}
 }
 
+// Test the equality of two responses from localhost and osmosis public endpoint *GetNodeInfo*
 func TestGetNodeInfo(t *testing.T) {
 	local_client := tmclient.Dial("localhost:8080")
 	local_response, local_err := (*local_client).GetNodeInfo(context.Background(), &tmservice.GetNodeInfoRequest{})
